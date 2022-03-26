@@ -6,9 +6,8 @@ wrap.world.set_back_image("fion/foi/fon.jpg")
 
 kiberpank=wrap.sprite.add("kiberpank_id",500,500, "kiberpank")
 dom=wrap.sprite.add("kiberpank_id",100,100, "dombabeegi")
-
-
-
+patron = wrap.sprite.add("kiberpank_id",500,500, "patron")
+wrap.sprite.hide(patron)
 @wrap.on_key_always(wrap.K_w)
 def dvizhenie(keys,pos_x,pos_y):
 
@@ -33,6 +32,13 @@ def sdvin_Eart():
     wrap.sprite.move_to(kiberpank,500,500)
     wrap.sprite.move(dom,500-x_kiberpanka_do_sdviga,500-y_kiberpanka_do_sdviga)
 
+@wrap.on_mouse_down(wrap.BUTTON_LEFT)
+def delaem_strelbu():
+
+    kiberpnk_gradus=wrap.sprite.get_angle(kiberpank)
+
+    wrap.sprite.set_angle(patron,kiberpnk_gradus)
+    wrap.sprite.show(patron)
 
 
 
