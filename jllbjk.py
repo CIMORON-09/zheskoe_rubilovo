@@ -11,6 +11,7 @@ wrap.sprite.hide(patron)
 @wrap.on_key_always(wrap.K_w)
 def dvizhenie(keys,pos_x,pos_y):
 
+
     if wrap.K_w in keys:
         wrap.sprite.move_at_angle_dir(kiberpank,15)
     sdvin_Eart()
@@ -39,7 +40,11 @@ def delaem_strelbu():
 
     wrap.sprite.set_angle(patron,kiberpnk_gradus)
     wrap.sprite.show(patron)
+    @wrap.always
+    def polet_patrona():
 
+
+        wrap.sprite.move(patron,0,+5)
 
 
 #нужн0 что бы мир двигался во крук героя
