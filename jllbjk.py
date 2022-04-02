@@ -33,21 +33,24 @@ def sdvin_Eart():
     wrap.sprite.move_to(kiberpank,500,500)
     wrap.sprite.move(dom,500-x_kiberpanka_do_sdviga,500-y_kiberpanka_do_sdviga)
 
+@wrap.always(delay=1000)
+def delaem_polet(mouse_buttons):
+    print(mouse_buttons)
+    # if  wrap.BUTTON_LEFT==1   :
+    wrap.sprite.move(patron,0,0-7)
+#нужн0 что бы мир двигался во крук героя
+
+
 @wrap.on_mouse_down(wrap.BUTTON_LEFT)
 def delaem_strelbu():
-
-    kiberpnk_gradus=wrap.sprite.get_angle(kiberpank)
-
-    wrap.sprite.set_angle(patron,kiberpnk_gradus)
     wrap.sprite.show(patron)
-    @wrap.always
-    def polet_patrona():
 
-
-        wrap.sprite.move(patron,0,+5)
-
-
-#нужн0 что бы мир двигался во крук героя
+    ypatrona=wrap.sprite.get_y(patron)
+    if ypatrona==500:
+        kiberpnk_gradus = wrap.sprite.get_angle(kiberpank)
+        wrap.sprite.set_angle(patron, kiberpnk_gradus)
+        wrap.sprite.show(patron)
+    wrap.sprite.move_at_angle_dir(patron,-7)
 
 import wrap_py
 wrap_py.app.start()
